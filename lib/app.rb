@@ -17,8 +17,26 @@ puts "|_|                                       "
 
 # For each product in the data set:
   # Print the name of the toy
-  # Print the retail price of the toy
-  # Calculate and print the total number of purchases
+  products_hash["items"].each do |toy|
+    puts toy["title"]
+    puts "********************"
+    # Print the retail price of the toy
+    puts toy["full-price"]
+    # Calculate and print the total number of purchases
+    purchases_counter = 0
+
+    toy["purchases"].each do |purchases|
+      purchases_counter =  purchases_counter + 1
+    end
+    puts purchases_counter
+
+    
+    puts
+
+
+
+  end
+
   # Calculate and print the total amount of sales
   # Calculate and print the average price the toy sold for
   # Calculate and print the average discount (% or $) based off the average sales price
