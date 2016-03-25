@@ -21,24 +21,33 @@ puts "|_|                                       "
     puts toy["title"]
     puts "********************"
     # Print the retail price of the toy
-    puts toy["full-price"]
+    puts "Retail Price: $#{toy["full-price"]}"
     # Calculate and print the total number of purchases
     purchases_counter = 0
 
     toy["purchases"].each do |purchases|
       purchases_counter =  purchases_counter + 1
     end
-    puts purchases_counter
+    puts "Total Purchases: #{purchases_counter}"
 
-    
+    # Calculate and print the total amount of sales
+    total_sales = 0
+
+    toy["purchases"].each do |sale_price|
+
+    total_sales = total_sales + sale_price["price"]
+    end
+
+    puts "Total Sales: $#{total_sales}"
+    # Calculate and print the average price the toy sold for
+    puts "Average Price: #{total_sales / purchases_counter}"
     puts
-
-
 
   end
 
-  # Calculate and print the total amount of sales
-  # Calculate and print the average price the toy sold for
+
+
+
   # Calculate and print the average discount (% or $) based off the average sales price
 
 
