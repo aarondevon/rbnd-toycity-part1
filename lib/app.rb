@@ -20,14 +20,18 @@ puts "|_|                                       "
   products_hash["items"].each do |toy|
     puts toy["title"]
     puts "********************"
+
     # Print the retail price of the toy
-    puts "Retail Price: $#{toy["full-price"]}"
+    retail_price = toy["full-price"].to_f
+    puts "Retail Price: $#{retail_price}"
+
     # Calculate and print the total number of purchases
     purchases_counter = 0
 
     toy["purchases"].each do |purchases|
       purchases_counter =  purchases_counter + 1
     end
+
     puts "Total Purchases: #{purchases_counter}"
 
     # Calculate and print the total amount of sales
@@ -39,17 +43,23 @@ puts "|_|                                       "
     end
 
     puts "Total Sales: $#{total_sales}"
+
     # Calculate and print the average price the toy sold for
     puts "Average Price: #{total_sales / purchases_counter}"
+
+    # Calculate and print the average discount (% or $) based off the average sales price
+    average_discount = ((retail_price * purchases_counter) - total_sales) / purchases_counter
+
+    puts "Average Discount: $#{average_discount}"
+
+    avergae_discount_percent = average_discount / (retail_price / 100)
+    avergae_discount_percent = avergae_discount_percent.round(2)
+    puts "Average Discount Percentage: #{avergae_discount_percent}%"
+
+    puts "********************"
     puts
 
   end
-
-
-
-
-  # Calculate and print the average discount (% or $) based off the average sales price
-
 
 	puts " _                         _     "
 	puts "| |                       | |    "
@@ -61,6 +71,9 @@ puts "|_|                                       "
 
 # For each brand in the data set:
   # Print the name of the brand
+  products_hash["items"].each do |brand|
+    
+  end
   # Count and print the number of the brand's toys we stock
   # Calculate and print the average price of the brand's toys
   # Calculate and print the total revenue of all the brand's toy sales combined
