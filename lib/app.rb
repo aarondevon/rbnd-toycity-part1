@@ -72,7 +72,8 @@ puts "|_|                                       "
 # For each brand in the data set:
   # Print the name of the brand
   products_hash["items"].each do |brand|
-    
+    puts brand["brand"] if brand["stock"].to_i > 0
+     # Count and print the number of the brand's toys we stock
   end
   # Count and print the number of the brand's toys we stock
   # Calculate and print the average price of the brand's toys
