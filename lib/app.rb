@@ -104,7 +104,6 @@ puts "|_|                                       "
         average_brand_price += add
       end
 
-      # Try and think of different way of getting the number 2
       brands = []
       products_hash["items"].each do |brand_count|
         if current_brand == brand_count["brand"]
@@ -112,8 +111,6 @@ puts "|_|                                       "
         end
       end
       brands_counter = brands.count(current_brand)
-
-
 
       average_brand_price = average_brand_price / brands_counter
       puts "Average Product Price: $#{average_brand_price.round(2)}" if brand["stock"].to_i > 0
